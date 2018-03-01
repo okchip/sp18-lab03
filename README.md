@@ -1,6 +1,9 @@
 # Attack the Auction
 Welcome to lab03. In this assignment you'll be getting acclimated with external calls, inheritance, and smart contract security.
 
+## Collaborators:
+Gustavo De Leon.
+
 ## Homework Instructions
 Your task is to complete both `BadAuction.sol` and `GoodAuction.sol` such that they are each, respectively, vulnerable and protected from three specific security vulnerabilities. Notice that both contracts inherit from `AuctionInterface.sol`.
 
