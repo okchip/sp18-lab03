@@ -64,9 +64,15 @@ contract GoodAuction is AuctionInterface {
 		//require(msg.sender == highestBidder);
 		//highestBid = msg.value;
 		if (msg.sender == highestBidder) {
-			uint refund = highestBid - msg.value;
-			highestBid = msg.value;
-			msg.sender.send(refund);
+			//uint refund = highestBid - msg.value;
+			//highestBid = msg.value;
+			//msg.sender.send(refund);
+			if (highestBid >= 0) {
+				highestBid = highestBid - 1;
+				require(highestBidder.send(1));
+			} else {
+				revert();
+			}
 		}
 	}
 
@@ -80,7 +86,7 @@ contract GoodAuction is AuctionInterface {
 
 	function () payable {
 		// YOUR CODE HERE
-		msg.sender.send(msg.value);
+		revert();
 	}
 
 }
